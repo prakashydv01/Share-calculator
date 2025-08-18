@@ -61,24 +61,35 @@ const NepalStockCalculator = () => {
   const calculateSellDetails = () => {
     const qty = parseFloat(quantity) || 0;
     const sell = parseFloat(sellPrice) || 0;
-    const purchase = parseFloat(purchasePrice) || 0;
-    
+    const enteredPurchase = parseFloat(purchasePrice) || 0;
+
+    // --- Convert entered purchase price into WACC price ---
+    const amount = qty * enteredPurchase;
+    const commissionOnBuy = calculateBrokerCommission(amount);
+    const sebonFeeOnBuy = (amount * SEBON_FEE) / 100;
+    const totalBuyAmount = amount + commissionOnBuy + DP_CHARGE + sebonFeeOnBuy;
+    const waccPrice = qty > 0 ? totalBuyAmount / qty : 0;
+    // ------------------------------------------------------
+
     const saleAmount = qty * sell;
-    const purchaseAmount = qty * purchase;
-    const commission = calculateBrokerCommission(saleAmount);
-    const sebonFeeAmount = (saleAmount * SEBON_FEE) / 100;
-    const profit = saleAmount - purchaseAmount;
-    const capitalGainTax = profit > 0 ? profit * CAPITAL_GAIN_TAX_RATE : 0;
-    const netAmount = saleAmount - commission - DP_CHARGE - sebonFeeAmount - capitalGainTax;
+    const purchaseAmount = qty * waccPrice;
+    const commissionOnSell = calculateBrokerCommission(saleAmount);
+    const sebonFeeOnSell = (saleAmount * SEBON_FEE) / 100;
+    const profitBeforeTax = saleAmount - purchaseAmount - commissionOnSell - DP_CHARGE - sebonFeeOnSell;
+    const capitalGainTax = profitBeforeTax > 0 ? profitBeforeTax * CAPITAL_GAIN_TAX_RATE : 0;
+    const profit = saleAmount - purchaseAmount - commissionOnSell - DP_CHARGE - sebonFeeOnSell- capitalGainTax;
+    const netAmount = saleAmount - commissionOnSell - DP_CHARGE - sebonFeeOnSell - capitalGainTax;
 
     return {
       saleAmount,
       purchaseAmount,
-      commission,
-      sebonFeeAmount,
+      commissionOnSell,
+      sebonFeeOnSell,
+      profitBeforeTax,
       profit,
       capitalGainTax,
-      netAmount
+      netAmount,
+      waccPrice
     };
   };
 
@@ -109,7 +120,7 @@ const NepalStockCalculator = () => {
             </button>
             <button
               onClick={() => {setMode('sell'); setCalculated(false);}}
-              className={`px-4 py-2  ml-5 text-sm font-medium rounded-r-lg ${mode === 'sell' ? 'bg-green-700 text-white-700' : 'bg-green-900 text-white'}`}
+              className={`px-4 py-2 ml-5 text-sm font-medium rounded-r-lg ${mode === 'sell' ? 'bg-green-700 text-white' : 'bg-green-900 text-white'}`}
             >
               Sell Calculator
             </button>
@@ -125,10 +136,11 @@ const NepalStockCalculator = () => {
                   Buy Price (NPR)
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="decimal"
                   value={buyPrice}
                   onChange={(e) => {setBuyPrice(e.target.value); setCalculated(false);}}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black [appearance:textfield]"
                   placeholder="0.00"
                 />
               </div>
@@ -137,10 +149,11 @@ const NepalStockCalculator = () => {
                   Quantity
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
                   value={quantity}
                   onChange={(e) => {setQuantity(e.target.value); setCalculated(false);}}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black [appearance:textfield]"
                   placeholder="0"
                 />
               </div>
@@ -175,7 +188,7 @@ const NepalStockCalculator = () => {
                     <span className="font-medium text-gray-950">{formatNPR(calculateBuyDetails().commission)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Actual Price Per Share:</span>
+                    <span className="text-gray-700">Actual Price Per Share (WACC):</span>
                     <span className="font-medium text-gray-950">{formatNPR(calculateBuyDetails().actualPricePerShare)}</span>
                   </div>
                   <div className="flex justify-between pt-3 mt-3 border-t border-blue-200">
@@ -197,10 +210,11 @@ const NepalStockCalculator = () => {
                   Sale Price (NPR)
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="decimal"
                   value={sellPrice}
                   onChange={(e) => {setSellPrice(e.target.value); setCalculated(false);}}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black [appearance:textfield]"
                   placeholder="0.00"
                 />
               </div>
@@ -209,10 +223,11 @@ const NepalStockCalculator = () => {
                   Purchase Price (NPR)
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="decimal"
                   value={purchasePrice}
                   onChange={(e) => {setPurchasePrice(e.target.value); setCalculated(false);}}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black [appearance:textfield]"
                   placeholder="0.00"
                 />
               </div>
@@ -221,10 +236,11 @@ const NepalStockCalculator = () => {
                   Quantity
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
                   value={quantity}
                   onChange={(e) => {setQuantity(e.target.value); setCalculated(false);}}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-black [appearance:textfield]"
                   placeholder="0"
                 />
               </div>
@@ -245,7 +261,10 @@ const NepalStockCalculator = () => {
             
             {/* Capital Gain Tax Note */}
             <div className="text-sm bg-yellow-50 p-3 rounded border border-yellow-200">
-              <p className="text-yellow-700">Note: Capital gain tax of 7.5% applies for holdings less than 365 days.</p>
+              <p className="text-yellow-700">
+                Note: Capital gain tax of 7.5% applies for holdings less than 365 days. 
+                Purchase price is converted to WACC internally before calculation.
+              </p>
             </div>
             
             <button
@@ -265,6 +284,10 @@ const NepalStockCalculator = () => {
                     <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().saleAmount)}</span>
                   </div>
                   <div className="flex justify-between">
+                    <span className="text-gray-700">Purchase Price (WACC):</span>
+                    <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().waccPrice)}</span>
+                  </div>
+                  <div className="flex justify-between">
                     <span className="text-gray-700">Purchase Amount:</span>
                     <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().purchaseAmount)}</span>
                   </div>
@@ -274,11 +297,11 @@ const NepalStockCalculator = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">SEBON Fee (0.015%):</span>
-                    <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().sebonFeeAmount)}</span>
+                    <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().sebonFeeOnSell)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">Broker Commission:</span>
-                    <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().commission)}</span>
+                    <span className="font-medium text-gray-950">{formatNPR(calculateSellDetails().commissionOnSell)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">Capital Gain Tax (7.5%):</span>
