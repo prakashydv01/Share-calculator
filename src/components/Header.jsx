@@ -45,9 +45,7 @@ const Header = () => {
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
             <li><a href="/" className="text-gray-700 hover:text-indigo-600 font-medium">Home</a></li>
-            <li><a href="/about" className="text-gray-700 hover:text-indigo-600 font-medium">About</a></li>
-            <li><a href="/services" className="text-gray-700 hover:text-indigo-600 font-medium">Services</a></li>
-            <li><a href="/contact" className="text-gray-700 hover:text-indigo-600 font-medium">Contact</a></li>
+            
           </ul>
         </nav>
 
