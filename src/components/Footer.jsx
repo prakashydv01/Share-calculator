@@ -38,7 +38,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Stock Calculator. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Share Calculator. All rights reserved.</p>
           
         </div>
       </div>

@@ -38,7 +38,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <a href="/" className="text-indigo-600 hover:text-indigo-800">Hamro Calculator</a>
+          <a href="/" className="text-indigo-600 hover:text-indigo-800">Share Calculator</a>
         </div>
 
         {/* Desktop Navigation */}

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block private folders (optional)
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.prakash404.com.np/sitemap.xml
