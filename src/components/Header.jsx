@@ -95,27 +95,7 @@ const Header = () => {
                 >
                   Home
                 </a>
-                <a 
-                  href="/about" 
-                  className="text-xl font-medium text-gray-700 hover:text-indigo-600 py-2 border-b border-gray-100"
-                  onClick={closeMobileMenu}
-                >
-                  About
-                </a>
-                <a 
-                  href="/services" 
-                  className="text-xl font-medium text-gray-700 hover:text-indigo-600 py-2 border-b border-gray-100"
-                  onClick={closeMobileMenu}
-                >
-                  Services
-                </a>
-                <a 
-                  href="/contact" 
-                  className="text-xl font-medium text-gray-700 hover:text-indigo-600 py-2 border-b border-gray-100"
-                  onClick={closeMobileMenu}
-                >
-                  Contact
-                </a>
+               
               </div>
             </div>
           </div>
