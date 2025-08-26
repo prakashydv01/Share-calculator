@@ -118,22 +118,29 @@ const NepalStockCalculator = () => {
         </h2>
         
         {/* Mode Toggle */}
-        <div className="flex justify-center mb-20">
-          <div className="inline-flex rounded-md shadow-sm">
-            <button
-              onClick={() => {setMode('buy'); setCalculated(false);}}
-              className={`px-4 py-2 mr-2 text-sm font-medium rounded-l-lg ${mode === 'buy' ? 'bg-blue-700 text-white' : 'bg-blue-900 text-white'}`}
-            >
-              Buy Calculator
-            </button>
-            <button
-              onClick={() => {setMode('sell'); setCalculated(false);}}
-              className={`px-4 py-2 ml-5 text-sm font-medium rounded-r-lg ${mode === 'sell' ? 'bg-green-700 text-white' : 'bg-green-900 text-white'}`}
-            >
-              Sell Calculator
-            </button>
-          </div>
-        </div>
+        <div className="flex justify-center mb-20"> 
+  <div className="inline-flex rounded-md shadow-sm">
+    <button
+      onClick={() => {setMode('buy'); setCalculated(false);}}
+      className={`px-4 py-2 mr-2 text-sm font-medium rounded-l-lg transition
+        ${mode === 'buy' 
+          ? 'bg-blue-600 text-white' 
+          : 'bg-blue-500 text-white'} !bg-blue-500`}
+    >
+      Buy Calculator
+    </button>
+    <button
+      onClick={() => {setMode('sell'); setCalculated(false);}}
+      className={`px-4 py-2 ml-5 text-sm font-medium rounded-r-lg transition
+        ${mode === 'sell' 
+          ? 'bg-green-600 text-white' 
+          : 'bg-green-500 text-white'} !bg-green-500`}
+    >
+      Sell Calculator
+    </button>
+  </div>
+</div>
+
         
         {/* Buy Section */}
         {mode === 'buy' && (
