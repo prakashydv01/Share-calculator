@@ -104,7 +104,7 @@ const NepalStockCalculator = () => {
 
   return (
 
-      <main className="w-full px-0 py-8 font-sans bg-gray-900 min-h-screen">
+      <main className="w-full px-0 py-8 font-sans bg-white-900 min-h-screen">
       {/* SEO Metadata */}
       <title>Share Calculator</title>
       <meta 
