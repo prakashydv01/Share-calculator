@@ -103,6 +103,14 @@ const NepalStockCalculator = () => {
   };
 
   return (
+
+      <main className="w-full px-0 py-8 font-sans bg-gray-900 min-h-screen">
+      {/* SEO Metadata */}
+      <title>Share Calculator</title>
+      <meta 
+        name="description" 
+        content="Nepal Stock Buy/Sell Calculator - Calculate total costs, commissions, taxes, and net amounts for stock transactions in Nepal."
+      />
     <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden md:max-w-2xl my-8">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-30 mt-15 text-center">
@@ -329,6 +337,7 @@ const NepalStockCalculator = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 
