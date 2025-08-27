@@ -177,7 +177,7 @@ const NepalStockCalculator = () => {
             <button
               onClick={handleCalculate}
               disabled={!buyPrice || !quantity}
-              className={`w-full py-2 px-4 rounded-md text-white font-medium ${(!buyPrice || !quantity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+              className={`w-full py-2 px-4 rounded-md text-white font-medium ${(!buyPrice || !quantity) ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-400 hover:bg-blue-400'}`}
             >
               Calculate
             </button>
