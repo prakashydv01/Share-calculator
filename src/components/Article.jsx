@@ -139,43 +139,109 @@ Example:
 
 After deducting broker commission, SEBON fees, DP charges, and CGT, the real ROI may be closer to 20–22%. Always calculate the adjusted ROI for a realistic picture of your investment performance.`
     }
+    // keep your other articles...
   ];
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Helmet SEO Tags */}
+      {/* SEO Meta Tags */}
       <Helmet>
-        <title>Nepal Stock Market Guides & Share Calculator Tips</title>
-        <meta name="description" content="In-depth guides on investing, NEPSE, capital gains tax, share calculator, and online trading in Nepal." />
+        <title>Share Calculator Nepal – Stock Profit & Loss Tool</title>
+        <meta
+          name="description"
+          content="Free Share Calculator Nepal. Instantly calculate profit, loss, brokerage, WACC, and capital gains tax for NEPSE shares. Best share calculator for Nepali investors."
+        />
+        <meta
+          name="keywords"
+          content="Share Calculator Nepal, NEPSE share profit loss calculator, WACC calculator Nepal, Nepali stock calculator"
+        />
       </Helmet>
 
       {/* Hero Section */}
-      <div className="bg-gray-300 text-white py-16">
+      <div className="bg-gray-300 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-blue-700 text-4xl font-bold mb-4">Nepal Stock Market Resources</h1>
+          <h1 className="text-blue-700 text-4xl font-bold mb-4 text-center align-middle">
+            Share Calculator Nepal - Calculate Profit & Loss Instantly
+          </h1>
           <p className="text-blue-700 text-xl max-w-2xl mx-auto">
-             guides to help you succeed in the Nepal Stock Exchange
+            Our Share Calculator helps Nepali investors calculate stock profit,
+            loss, WACC, brokerage fees, and capital gains tax with accuracy.
+            Designed for NEPSE traders and long-term investors.
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full lg:w-3/4 mx-auto">
-            <div className="space-y-12">
-              {articles.map((article) => (
-                <article key={article.id} className="bg-white rounded-lg shadow-md p-8">
-                  <Helmet>
-                    <title>{article.title} | Share Calculator Nepal</title>
-                    <meta name="description" content={article.description} />
-                  </Helmet>
-                  <h2 className="text-2xl font-bold mb-6 text-gray-800">{article.title}</h2>
-                  <div className="prose max-w-none text-gray-700 leading-relaxed whitespace-pre-line">
-                    {article.content}
-                  </div>
-                </article>
-              ))}
+      {/* Intro Section */}
+      <div className="container mx-auto px-4 py-10  md:pr-90">
+        <div className="bg-white p-6 rounded-xl shadow-md mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            About Share Calculator
+          </h2>
+          <p className="text-gray-700 leading-relaxed text-justify">
+            The <strong>Share Calculator Nepal</strong> is a free online tool
+            that helps investors calculate their exact returns from stock
+            trading. It considers purchase price, selling price, brokerage
+            charges, WACC, and capital gains tax so you can know your{" "}
+            <em>real profit or loss</em> before selling shares. Use this
+            calculator for NEPSE-listed companies to make smarter trading and
+            investing decisions.
+          </p>
+        </div>
+      </div>
+
+      {/* Articles Section */}
+      <div className="container mx-auto px-4 py-10  md:pr-90">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Articles</h2>
+        <div className="space-y-6">
+          {articles.map((article) => (
+            <div
+              key={article.id}
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-bold text-blue-700 mb-2">
+                {article.title}
+              </h3>
+              <p className="text-gray-600 mb-4 text-justify">
+                {article.description}
+              </p>
+              <p className="text-gray-700 whitespace-pre-line text-justify">
+                {article.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="container mx-auto px-4 py-10 md:pr-90">
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            Frequently Asked Questions (FAQ) – Share Calculator Nepal
+          </h2>
+          <div className="space-y-4 text-gray-700 text-justify">
+            <div>
+              <h3 className="font-bold">🔹 What is a Share Calculator?</h3>
+              <p>
+                A Share Calculator is a tool that helps investors calculate
+                profit, loss, brokerage fees, and capital gains tax before
+                buying or selling shares in NEPSE.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold">🔹 Why use Share Calculator Nepal?</h3>
+              <p>
+                Nepali investors can avoid miscalculations and get accurate
+                profit or loss estimates using our free Share Calculator. It
+                works for all NEPSE-listed stocks.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold">🔹 Does it calculate WACC and tax?</h3>
+              <p>
+                Yes, the calculator includes{" "}
+                <strong>Weighted Average Cost of Capital (WACC)</strong> and
+                applies capital gains tax rules for Nepal automatically.
+              </p>
             </div>
           </div>
         </div>
