@@ -45,6 +45,7 @@ const Header = () => {
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
             <li><a href="/" className="text-gray-700 hover:text-indigo-600 font-medium">Home</a></li>
+            <li><a href="/dividend" className="text-gray-700 hover:text-indigo-600 font-medium">Dividend Calculator</a></li>
             
           </ul>
         </nav>
@@ -94,6 +95,13 @@ const Header = () => {
                   onClick={closeMobileMenu}
                 >
                   Home
+                </a>
+                <a 
+                  href="/dividend" 
+                  className="text-xl font-medium text-gray-700 hover:text-indigo-600 py-2 border-b border-gray-100"
+                  onClick={closeMobileMenu}
+                >
+                  Dividend Calculator
                 </a>
                
               </div>

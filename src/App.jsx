@@ -7,6 +7,8 @@ import TermsAndConditions from "./pages/Terms";
 import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Layout from "./components/layout";
+import  DividendPage from "./pages/Dividends/combinedpage";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="terms" element={<TermsAndConditions />} />
         <Route path="about" element={<AboutUs />} />
         <Route path="contact" element={<ContactUs />} />
+        <Route path="dividend" element={<DividendPage />} />
       </Route>
     </Routes>
   );
