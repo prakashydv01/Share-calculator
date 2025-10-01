@@ -8,6 +8,7 @@ import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Layout from "./components/layout";
 import  DividendPage from "./pages/Dividends/combinedpage";
+import StockAveragePage from "./pages/stock average/combineAverage";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="about" element={<AboutUs />} />
         <Route path="contact" element={<ContactUs />} />
         <Route path="dividend" element={<DividendPage />} />
+        <Route path="stock-average" element={<StockAveragePage />} />
       </Route>
     </Routes>
   );

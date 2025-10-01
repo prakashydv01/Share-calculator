@@ -124,7 +124,7 @@ const NepalStockCalculator = () => {
       onClick={() => {setMode('buy'); setCalculated(false);}}
       className={`px-4 py-2 mr-2 text-sm font-medium rounded-l-lg transition
         ${mode === 'buy' 
-          ? 'bg-blue-600 text-white' 
+          ? 'bg-blue-800 text-white' 
           : 'bg-blue-500 text-white'} !bg-blue-500`}
     >
       Buy Calculator
@@ -177,7 +177,7 @@ const NepalStockCalculator = () => {
             <button
               onClick={handleCalculate}
               disabled={!buyPrice || !quantity}
-              className={`w-full py-2 px-4 rounded-md text-white font-medium ${(!buyPrice || !quantity) ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-400 hover:bg-blue-400'}`}
+              className={`w-full py-2 px-4 rounded-md text-white font-medium ${(!buyPrice || !quantity) ? 'bg-blue-900 cursor-not-allowed' : 'bg-blue-400 hover:bg-blue-400'}`}
             >
               Calculate
             </button>

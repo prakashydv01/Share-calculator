@@ -46,6 +46,7 @@ const Header = () => {
           <ul className="flex space-x-8">
             <li><a href="/" className="text-gray-700 hover:text-indigo-600 font-medium">Home</a></li>
             <li><a href="/dividend" className="text-gray-700 hover:text-indigo-600 font-medium">Dividend Calculator</a></li>
+            <li><a href="/stock-average" className="text-gray-700 hover:text-indigo-600 font-medium">Stock Average Calculator</a></li>
             
           </ul>
         </nav>
@@ -102,6 +103,13 @@ const Header = () => {
                   onClick={closeMobileMenu}
                 >
                   Dividend Calculator
+                </a>
+                <a 
+                  href="/stock-average" 
+                  className="text-xl font-medium text-gray-700 hover:text-indigo-600 py-2 border-b border-gray-100"
+                  onClick={closeMobileMenu}
+                >
+                  Stock Average Calculator
                 </a>
                
               </div>

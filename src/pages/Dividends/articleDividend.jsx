@@ -105,7 +105,7 @@ export default function DividendArticle() {
 
       {/* SEO Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-3">Keywords for SEO</h2>
+        <h2 className="text-2xl font-semibold mb-3">Key Points</h2>
         <p className="text-gray-700">
           Dividend Calculator Nepal, Cash Dividend Calculator, Bonus Dividend Calculator, NEPSE Dividend Calculator, 
           Share Dividend Nepal
