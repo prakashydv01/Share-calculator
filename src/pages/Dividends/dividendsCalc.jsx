@@ -218,7 +218,7 @@ export default function DividendCalculatorNepal() {
       )}
 
       {/* SEO Content */}
-      <article className="prose max-w-none mt-6">
+      <article className="prose max-w-none mt-20">
         <h1>About Dividend Calculator Nepal</h1>
         <p>
           This <strong>Dividend Calculator Nepal</strong> helps investors quickly
