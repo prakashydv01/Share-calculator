@@ -1,15 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import './index.css';
+import App from './App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <div className="overflow-x-hidden">
-    <App />
-  </div>
+      <HelmetProvider>
+        <div className="overflow-x-hidden">
+          <App />
+        </div>
+      </HelmetProvider>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);
