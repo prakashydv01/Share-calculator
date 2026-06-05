@@ -43,7 +43,7 @@ export default function SIPCalculatorArticlePage() {
         <meta property="og:description" content="Plan your future with our easy SIP calculator. Input amount, return, and years to see total corpus." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://wealthtools.example/sip-calculator" />
+        <link rel="canonical" href="https://prakash404.com.np/sip-calculator" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(faqStructuredData)}</script>
       </Helmet>

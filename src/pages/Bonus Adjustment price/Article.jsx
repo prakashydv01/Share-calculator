@@ -9,8 +9,8 @@ export default function BonusAdjustmentArticlePage() {
     description: "Learn how bonus issues affect share prices, understand the adjustment formula, see real examples, and get answers to common questions about bonus shares.",
     author: { "@type": "Organization", name: "Your Brand Name" },
     datePublished: "2026-06-03",
-    mainEntityOfPage: "https://yourwebsite.com/bonus-price-adjustment-guide",
-    image: "https://yourwebsite.com/bonus-share-guide-og.jpg",
+    mainEntityOfPage: "https://prakash404.com.np/bonus-price-adjustment-guide",
+    image: "https://prakash404.com.np/bonus-share-guide-og.jpg",
   };
 
   return (
@@ -21,12 +21,12 @@ export default function BonusAdjustmentArticlePage() {
         <meta name="keywords" content="bonus price adjustment, bonus share price calculation, adjusted share price, bonus issue formula, stock price after bonus" />
         <meta name="author" content="Your Brand Name" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://yourwebsite.com/bonus-price-adjustment-guide" />
+        <link rel="canonical" href="https://prakash404.com.np/bonus-price-adjustment-guide" />
         <meta property="og:title" content="Bonus Price Adjustment Guide | How Bonus Issues Affect Share Prices" />
         <meta property="og:description" content="Understand the exact formula used to adjust share prices after a bonus announcement. Includes real-world examples and FAQs." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://yourwebsite.com/bonus-price-adjustment-guide" />
-        <meta property="og:image" content="https://yourwebsite.com/bonus-share-guide-og.jpg" />
+        <meta property="og:url" content="https://prakash404.com.np/bonus-price-adjustment-guide" />
+        <meta property="og:image" content="https://prakash404.com.np/bonus-share-guide-og.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Bonus Price Adjustment Guide" />
         <meta name="twitter:description" content="Learn how bonus issues affect share prices with formula, examples, and detailed explanations." />

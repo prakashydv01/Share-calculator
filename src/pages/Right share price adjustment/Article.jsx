@@ -12,8 +12,8 @@ export default function RightsShareAdjustmentArticle() {
     description: "Free online calculator to find adjusted share price after a rights issue. Learn the formula, see examples, and understand the theoretical value of rights shares.",
     author: { "@type": "Organization", name: "Your Brand Name" },
     datePublished: "2026-06-03",
-    mainEntityOfPage: "https://yourwebsite.com/rights-share-adjustment-calculator",
-    image: "https://yourwebsite.com/rights-share-guide-og.jpg",
+    mainEntityOfPage: "https://prakash404.com.np/rights-share-adjustment-calculator",
+    image: "https://prakash404.com.np/rights-share-guide-og.jpg",
   };
 
   return (
@@ -30,15 +30,15 @@ export default function RightsShareAdjustmentArticle() {
         />
         <meta name="author" content="Your Brand Name" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://yourwebsite.com/rights-share-adjustment-calculator" />
+        <link rel="canonical" href="https://prakash404.com.np/rights-share-adjustment-calculator" />
         <meta property="og:title" content="Rights Share Adjustment Calculator – Free Tool & Guide" />
         <meta
           property="og:description"
           content="Easily compute the adjusted share price after a rights issue. Instant results with formula breakdown and real examples."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/rights-share-adjustment-calculator" />
-        <meta property="og:image" content="https://yourwebsite.com/rights-share-guide-og.jpg" />
+        <meta property="og:url" content="https://prakash404.com.np/rights-share-adjustment-calculator" />
+        <meta property="og:image" content="https://prakash404.com.np/rights-share-guide-og.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rights Share Adjustment Calculator" />
         <meta name="twitter:description" content="Free tool to calculate adjusted share price and theoretical value of rights shares." />

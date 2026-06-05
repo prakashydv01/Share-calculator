@@ -57,9 +57,9 @@ export default function EMICalculatorArticlePage() {
         <meta property="og:title" content="EMI Calculator – Estimate Your Monthly Loan Payments" />
         <meta property="og:description" content="Calculate your EMI instantly. Input loan amount, interest rate, and tenure to see your monthly payment, total interest, and amortization summary." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://wealthtools.example/emi-og-image.jpg" />
+        <meta property="og:image" content="https://prakash404.com.np/emi-og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://wealthtools.example/emi-calculator" />
+        <link rel="canonical" href="https://prakash404.com.np/emi-calculator" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(faqStructuredData)}</script>
       </Helmet>
