@@ -87,14 +87,10 @@ const Header = () => {
 
         {/* Mobile Drawer - Home and Calculators now side by side */}
         <div className={`fixed inset-0 z-40 overflow-hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={closeMobileMenu} />
+          
           <div className={`absolute top-0 right-0 w-full max-w-md h-full bg-white shadow-xl transform transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
             <div className="absolute top-4 right-4">
-              <button onClick={closeMobileMenu} className="p-2 rounded-md text-gray-500 hover:text-gray-700">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              
             </div>
             <div className="h-full pt-16 pb-10 overflow-y-auto">
               <div className="px-6">
